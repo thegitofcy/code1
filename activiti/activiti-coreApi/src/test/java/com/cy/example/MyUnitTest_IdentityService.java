@@ -21,6 +21,7 @@ import static org.junit.Assert.assertNotNull;
 
 /**
  * 身份管理服务
+ * 	1. 管理用户和用户组的关系
  */
 @Slf4j
 public class MyUnitTest_IdentityService {

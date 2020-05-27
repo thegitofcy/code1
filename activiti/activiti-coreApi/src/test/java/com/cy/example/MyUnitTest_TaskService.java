@@ -21,6 +21,10 @@ import java.util.Map;
 /**
  * TaskService
  * 主要是操作 UserTask 对象.
+ * 	1. 获取 UserTask
+ * 	2. 参数变量设置和获取
+ * 	3. UserTask 权限信息(owner, assignee)
+ * 	4. 任务附件, 评论, event 等
  */
 @Slf4j
 public class MyUnitTest_TaskService {
