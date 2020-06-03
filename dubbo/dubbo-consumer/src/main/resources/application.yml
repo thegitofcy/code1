@@ -1,0 +1,16 @@
+dubbo:
+  application:
+    name: dubbo-consumer
+  registry:
+    address: 39.107.33.192:2181
+    protocol: zookeeper
+    check: false
+  monitor:
+    protocol: register
+  consumer:
+    check: false
+    timeout: 3000
+
+
+server:
+  port: 8062

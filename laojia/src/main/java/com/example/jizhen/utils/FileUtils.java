@@ -43,7 +43,6 @@ public class FileUtils {
         if (!type.startsWith(".")) {
            throw new IllegalArgumentException("The type of file must be start witeh '.'");
         }
-
         List<File> files = scanFiles(path);
         List<File> filesByType = new ArrayList<>();
         files.forEach(file -> {

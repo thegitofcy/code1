@@ -1,7 +1,6 @@
 package com.example.jizhen.utils;
 
 import com.alibaba.excel.ExcelReader;
-import com.alibaba.excel.metadata.ExcelHeadProperty;
 import com.alibaba.excel.metadata.Sheet;
 import com.alibaba.excel.read.context.AnalysisContext;
 import com.alibaba.excel.read.event.AnalysisEventListener;
@@ -14,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import static org.apache.commons.codec.Resources.getInputStream;
 
 @Slf4j
 @Data

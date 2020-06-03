@@ -21,12 +21,12 @@ public class JizhenApplication {
         process();
     }
 
-    public static void process() {
-//        String jarPath = FileUtils.getJarPath();
-        String jarPath = "/Users/cy/Desktop/test";
-        log.info("扫描文件...路径: [{}]", jarPath);
+    public static void process() throws FileNotFoundException {
+//        String jarPath = "/Users/cy/Desktop/test";
+        String jarPath = FileUtils.getJarPath();
+        log.info("get path will be scan: [{}]", jarPath);
         List<File> files = FileUtils.scanFilesByType(jarPath, ".xlsx");
-        List<Object> fields = new ArrayList<>();
+//        List<Object> fields = new ArrayList<>();
         files.forEach(file -> {
             try {
                 List<Map<Integer, String>> datas = ExcelUtils.readExcel(file);
