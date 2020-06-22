@@ -34,5 +34,7 @@ public class BlockedWaitingTimeWaiting implements Runnable{
         Thread.sleep(13000);
         System.out.println("thread1: " + thread1.getState());
         System.out.println("thread2: " + thread2.getState());
+
+        thread1.wait();
     }
 }
