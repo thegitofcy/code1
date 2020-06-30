@@ -1,6 +1,5 @@
 package com.cy.thread.com.cy.classInThreadAndObject;
 
-import org.omg.PortableServer.THREAD_POLICY_ID;
 
 /**
  * @program: thread

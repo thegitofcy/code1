@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cy.template.ssm.mapper.UserMapper">
+
+    <select id="findAll" resultType="User">
+        SELECT * FROM customer
+    </select>
+
+
+    <insert id="saveOrUpdate" parameterType="User">
+        insert into customer
+            (cus_name, birthday, cus_sex, cus_addr, cus_iphone)
+        VALUES
+               (#{cusName}, #{birthday}, #{cusSex}, #{cusAddr}, #{cusIphone})
+          ON DUPLICATE KEY
+          UPDATE
+          birthday = values(birthday),
+          cus_sex = values(cus_sex),
+          cus_addr = values(cus_addr),
+          cus_iphone = values(cus_iphone)
+    </insert>
+
+
+    <insert id="batchSaveOrUpdate" keyProperty="id" useGeneratedKeys="true" parameterType="java.util.List">
+        insert into customer
+            (cus_name, birthday, cus_sex, cus_addr, cus_iphone)
+        VALUES
+            <foreach collection="list" item="info" separator=",">
+                (#{info.cusName}, #{info.birthday}, #{info.cusSex}, #{info.cusAddr}, #{info.cusIphone})
+            </foreach>
+          ON DUPLICATE KEY
+          UPDATE
+          birthday = values(birthday),
+          cus_sex = values(cus_sex),
+          cus_addr = values(cus_addr),
+          cus_iphone = values(cus_iphone)
+    </insert>
+
+</mapper>
